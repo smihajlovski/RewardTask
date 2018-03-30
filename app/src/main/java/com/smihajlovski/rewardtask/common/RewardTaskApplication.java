@@ -1,7 +1,7 @@
 package com.smihajlovski.rewardtask.common;
 
 import android.app.Activity;
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.smihajlovski.rewardtask.BuildConfig;
@@ -15,10 +15,12 @@ import dagger.android.HasActivityInjector;
 import timber.log.Timber;
 
 /**
+ * Application class for RewardTask
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 
-public class RewardTaskApplication extends Application implements HasActivityInjector {
+public class RewardTaskApplication extends MultiDexApplication implements HasActivityInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;

@@ -7,6 +7,8 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 /**
+ * Fragment Dagger Module
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 
@@ -17,5 +19,5 @@ abstract class FragmentBuilderModule {
     abstract MainFragment bindMainFragment();
 
     @ContributesAndroidInjector
-    abstract DetailsFragment bindEmployeeDetailsFragment();
+    abstract DetailsFragment bindDetailsFragment();
 }

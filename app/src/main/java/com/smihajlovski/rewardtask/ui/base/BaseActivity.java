@@ -16,6 +16,8 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
 /**
+ * Application's BaseActivity
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

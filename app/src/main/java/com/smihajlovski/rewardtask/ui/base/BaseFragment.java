@@ -20,6 +20,8 @@ import javax.inject.Inject;
 import dagger.android.support.AndroidSupportInjection;
 
 /**
+ * Application's BaseFragment
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

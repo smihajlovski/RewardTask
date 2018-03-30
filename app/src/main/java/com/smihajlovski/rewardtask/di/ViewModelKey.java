@@ -11,6 +11,8 @@ import java.lang.annotation.Target;
 import dagger.MapKey;
 
 /**
+ * Dagger ViewModelKey
+ *
  * Created by Stefan on 29-Mar-18.
  */
 

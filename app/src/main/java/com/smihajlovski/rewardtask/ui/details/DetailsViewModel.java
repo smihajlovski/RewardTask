@@ -10,6 +10,8 @@ import javax.inject.Inject;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**
+ * Class representing DetailsViewModel
+ * <p>
  * Created by Stefan on 30-Mar-18.
  */
 

@@ -11,6 +11,8 @@ import com.smihajlovski.rewardtask.common.Constants;
 import org.parceler.Parcel;
 
 /**
+ * Class representing Employee model
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

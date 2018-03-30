@@ -13,6 +13,8 @@ import io.reactivex.Observable;
 import timber.log.Timber;
 
 /**
+ * Class representing Application's Repository
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

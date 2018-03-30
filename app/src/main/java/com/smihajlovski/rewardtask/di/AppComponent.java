@@ -12,6 +12,8 @@ import dagger.android.AndroidInjectionModule;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 /**
+ * Dagger AppComponent
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

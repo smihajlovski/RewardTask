@@ -2,7 +2,6 @@ package com.smihajlovski.rewardtask.di;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
-import android.support.annotation.NonNull;
 
 import java.util.Map;
 
@@ -11,6 +10,8 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 /**
+ * Dagger ViewModelFactory
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

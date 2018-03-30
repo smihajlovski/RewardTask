@@ -9,10 +9,6 @@ import android.net.NetworkInfo;
  */
 
 public class UtilsManager {
-
-    private static int screenWidth = 0;
-    private static int screenHeight = 0;
-
     /**
      * Check if it has an active connection.
      *

@@ -57,11 +57,7 @@ public class MainViewModel extends AndroidViewModel {
                 .subscribeWith(new DisposableObserver<List<Employee>>() {
                     @Override
                     public void onNext(List<Employee> employeeList) {
-                        if (employeeList.isEmpty()) {
-                            isErrorHolder.set(true);
-                        } else {
-                            mutableEmployeesList.setValue(employeeList);
-                        }
+                        mutableEmployeesList.setValue(employeeList);
                     }
 
                     @Override

@@ -32,7 +32,7 @@ public class MainFragment extends BaseFragment<MainViewModel, FragmentMainBindin
 
     public static final String ACTION_EMPLOYEE_DETAILS = MainFragment.class.getName() + "action.employee_details";
     private EmployeeAdapter employeeAdapter;
-    private List<Employee> testEmployeeList = new ArrayList<>();
+    private List<Employee> initialEmployeeList = new ArrayList<>();
 
     @Override
     public int getLayoutRes() {
@@ -82,7 +82,7 @@ public class MainFragment extends BaseFragment<MainViewModel, FragmentMainBindin
     private void init() {
         binder.setViewModel(viewModel);
         binder.executePendingBindings();
-        employeeAdapter = new EmployeeAdapter(getContext(), testEmployeeList);
+        employeeAdapter = new EmployeeAdapter(getContext(), initialEmployeeList);
         employeeAdapter.addOnItemClickListener(this);
         binder.rvEmployees.setLayoutManager(new LinearLayoutManager(getContext()));
         setListeners();
@@ -109,8 +109,8 @@ public class MainFragment extends BaseFragment<MainViewModel, FragmentMainBindin
         viewModel.loadEmployees();
         viewModel.mutableEmployeesList.observe(this, employeeList -> {
             Timber.d(Constants.APP_REWARD_TAG + " size of employees " + employeeList.size());
-            testEmployeeList.clear();
-            testEmployeeList.addAll(employeeList);
+            initialEmployeeList.clear();
+            initialEmployeeList.addAll(employeeList);
             employeeAdapter.notifyDataSetChanged();
             binder.rvEmployees.setAdapter(employeeAdapter);
         });

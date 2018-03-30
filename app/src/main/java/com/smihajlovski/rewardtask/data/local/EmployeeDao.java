@@ -13,6 +13,8 @@ import java.util.List;
 import io.reactivex.Single;
 
 /**
+ * Dao for Employee database
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 @Dao

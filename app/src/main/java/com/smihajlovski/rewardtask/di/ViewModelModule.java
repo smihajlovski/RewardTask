@@ -11,6 +11,8 @@ import dagger.Module;
 import dagger.multibindings.IntoMap;
 
 /**
+ * Dagger ViewModel Module
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 @Module

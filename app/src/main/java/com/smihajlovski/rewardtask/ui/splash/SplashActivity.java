@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.smihajlovski.rewardtask.ui.main.MainActivity;
 
 /**
+ * Application's Splash Activity
+ *
  * Created by Stefan on 30-Mar-18.
  */
 

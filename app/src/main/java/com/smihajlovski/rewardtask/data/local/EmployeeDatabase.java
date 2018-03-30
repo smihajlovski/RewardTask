@@ -7,6 +7,8 @@ import com.smihajlovski.rewardtask.common.Constants;
 import com.smihajlovski.rewardtask.data.model.Employee;
 
 /**
+ * Class representing Employees Database
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

@@ -7,6 +7,8 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 /**
+ * Activity Dagger Module
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

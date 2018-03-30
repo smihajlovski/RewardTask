@@ -8,6 +8,8 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 
 /**
+ * Application's ApiService
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

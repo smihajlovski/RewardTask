@@ -19,6 +19,8 @@ import com.smihajlovski.rewardtask.ui.base.BaseFragment;
 import org.parceler.Parcels;
 
 /**
+ * Class representing DetailsFragment
+ * <p>
  * Created by Stefan on 30-Mar-18.
  */
 

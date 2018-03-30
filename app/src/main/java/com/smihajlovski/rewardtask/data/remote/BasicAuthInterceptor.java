@@ -8,6 +8,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
+ * Basic Authenticator for networking
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 

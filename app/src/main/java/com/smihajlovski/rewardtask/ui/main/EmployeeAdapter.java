@@ -17,6 +17,8 @@ import com.smihajlovski.rewardtask.databinding.ItemEmployeeBinding;
 import java.util.List;
 
 /**
+ * Adapter for showing list of employees
+ * <p>
  * Created by Stefan on 29-Mar-18.
  */
 
