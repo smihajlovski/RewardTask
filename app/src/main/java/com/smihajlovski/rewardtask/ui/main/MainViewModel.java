@@ -28,8 +28,8 @@ public class MainViewModel extends AndroidViewModel {
     private final EmployeeRepository employeeRepository;
     private final SchedulerProviderManager schedulerProviderManager;
     private final CompositeDisposable compositeDisposable;
-    private ObservableField<Boolean> isLoading = new ObservableField<>(false);
-    private ObservableField<Boolean> isErrorHolder = new ObservableField<>(false);
+    public ObservableField<Boolean> isLoading = new ObservableField<>(false);
+    public ObservableField<Boolean> isErrorHolder = new ObservableField<>(false);
     MutableLiveData<List<Employee>> mutableEmployeesList = new MutableLiveData<>();
 
     @Inject
@@ -67,11 +67,13 @@ public class MainViewModel extends AndroidViewModel {
                     @Override
                     public void onError(Throwable e) {
                         Timber.d(Constants.APP_REWARD_TAG + " loadEmployeesFromApi onError: " + e.getLocalizedMessage());
+                        loadEmployeesFromDb();
                     }
 
                     @Override
                     public void onComplete() {
                         isLoading.set(false);
+                        isErrorHolder.set(false);
                     }
                 }));
     }

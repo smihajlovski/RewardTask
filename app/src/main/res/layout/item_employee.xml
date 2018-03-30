@@ -21,7 +21,6 @@
             android:layout_width="@dimen/zero_dimen"
             android:layout_height="@dimen/employee_item_size"
             android:layout_margin="@dimen/cardview_default_radius"
-            android:background="@color/colorWhite"
             app:cardCornerRadius="@dimen/cardview_default_radius"
             app:cardUseCompatPadding="true"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +30,8 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/drawee_employee_avatar"
@@ -57,6 +57,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/employee_name_company_margin"
                         android:text="@{employee.name}"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
                         tools:text="Miss Emily Hayes"/>
 
                     <TextView
@@ -65,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/employee_name_company_margin"
                         android:text="@{employee.company}"
+                        android:textColor="@color/colorWhite"
                         tools:text="Gerlach-Wunsch"/>
 
                 </LinearLayout>

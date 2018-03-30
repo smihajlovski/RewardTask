@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RewardTask</string>
+
+    <!--  Main Fragment  -->
+    <string name="employees_overview">Employees Overview</string>
+    <string name="tv_error">Ooops something went wrong, check your connection and try again?</string>
+
+    <!--  Employee Details Fragment  -->
+    <string name="employee_details">Employee Details</string>
 </resources>

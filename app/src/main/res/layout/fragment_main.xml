@@ -15,16 +15,91 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <RelativeLayout
+            android:id="@+id/custom_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/custom_action_bar_height"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/employees_overview"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/custom_action_bar_title_size"/>
+
+        </RelativeLayout>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_employees"
             android:layout_width="@dimen/zero_dimen"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:scrollbars="vertical"
+            android:visibility="@{viewModel.isLoading ? View.GONE : View.VISIBLE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/custom_action_bar"
             tools:listitem="@layout/item_employee"/>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_refresh_margin"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:scaleType="fitCenter"
+            app:backgroundTint="@color/colorAccent"
+            app:borderWidth="@dimen/zero_dimen"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_vector_refresh"/>
+
+        <LinearLayout
+            android:id="@+id/error_holder"
+            android:layout_width="@dimen/zero_dimen"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.isErrorHolder ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/error_iv_size"
+                android:layout_height="@dimen/error_iv_size"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_vector_error"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/error_text_view_padding"
+                android:text="@string/tv_error"
+                android:textColor="@color/colorRed"/>
+
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

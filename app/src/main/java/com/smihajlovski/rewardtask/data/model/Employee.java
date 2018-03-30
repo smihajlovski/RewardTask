@@ -8,10 +8,13 @@ import android.support.annotation.NonNull;
 import com.google.gson.annotations.SerializedName;
 import com.smihajlovski.rewardtask.common.Constants;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Stefan on 29-Mar-18.
  */
 
+@Parcel
 @Entity(tableName = Constants.EMPLOYEE_TABLE_NAME)
 public class Employee {
     @PrimaryKey

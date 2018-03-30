@@ -3,6 +3,7 @@ package com.smihajlovski.rewardtask.di;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
+import com.smihajlovski.rewardtask.ui.details.DetailsViewModel;
 import com.smihajlovski.rewardtask.ui.main.MainViewModel;
 
 import dagger.Binds;
@@ -19,6 +20,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel.class)
     abstract ViewModel bindMainViewModel(MainViewModel mainViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailsViewModel.class)
+    abstract ViewModel bindDetailsViewModel(DetailsViewModel detailsViewModel);
 
     @Binds
     abstract ViewModelProvider.Factory bindViewModelFactory(ViewModelFactory viewModelFactory);
