@@ -73,8 +73,15 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements
     }
 
     private void init() {
+        setActionBarTitle();
         fragmentManager = getSupportFragmentManager();
         fragmentManager.addOnBackStackChangedListener(this);
+    }
+
+    private void setActionBarTitle() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.employees_overview);
+        }
     }
 
     private void replaceFragment(Fragment fragment) {

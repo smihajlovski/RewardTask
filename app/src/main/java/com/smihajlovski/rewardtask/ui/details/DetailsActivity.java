@@ -3,6 +3,7 @@ package com.smihajlovski.rewardtask.ui.details;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.MenuItem;
 
 import com.smihajlovski.rewardtask.R;
 import com.smihajlovski.rewardtask.common.Constants;
@@ -32,6 +33,17 @@ public class DetailsActivity extends BaseActivity<ActivityDetailsBinding> implem
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void onBackStackChanged() {
         int countBackStack = fragmentManager.getBackStackEntryCount() - 1;
         if (countBackStack >= 0) backStackCounter = countBackStack;
@@ -55,17 +67,22 @@ public class DetailsActivity extends BaseActivity<ActivityDetailsBinding> implem
     @Override
     public void onFragmentInteractionCallback(Bundle bundle) {
         String action = bundle.getString(Constants.ACTION);
-        if (action.equals(DetailsFragment.ACTION_BACK)) {
-            finish();
-        }
     }
 
     private void init() {
         Bundle bundle = getIntent().getExtras();
         Employee employee = Parcels.unwrap(bundle.getParcelable(Constants.DATA_KEY_1));
+        setActionBarTitle();
         fragmentManager = getSupportFragmentManager();
         fragmentManager.addOnBackStackChangedListener(this);
         replaceFragment(DetailsFragment.newInstance(employee));
+    }
+
+    private void setActionBarTitle() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.employee_details);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void replaceFragment(Fragment fragment) {

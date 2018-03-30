@@ -15,37 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/custom_action_bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/custom_action_bar_height"
-            android:background="@color/colorPrimaryDark"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:maxLines="1"
-                android:text="@string/employees_overview"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/custom_action_bar_title_size"/>
-
-        </RelativeLayout>
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_employees"
             android:layout_width="@dimen/zero_dimen"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/zero_dimen"
             android:clipToPadding="false"
             android:scrollbars="vertical"
             android:visibility="@{viewModel.isLoading ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/custom_action_bar"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_employee"/>
 
         <ProgressBar

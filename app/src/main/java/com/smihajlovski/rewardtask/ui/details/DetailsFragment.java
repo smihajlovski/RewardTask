@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.smihajlovski.rewardtask.R;
-import com.smihajlovski.rewardtask.common.Constants;
 import com.smihajlovski.rewardtask.data.model.Employee;
 import com.smihajlovski.rewardtask.databinding.FragmentDetailsBinding;
 import com.smihajlovski.rewardtask.ui.base.BaseFragment;
@@ -26,7 +25,6 @@ import org.parceler.Parcels;
 public class DetailsFragment extends BaseFragment<DetailsViewModel, FragmentDetailsBinding> {
 
     public static final String ARG_PARAM1 = "param1";
-    public static final String ACTION_BACK = DetailsFragment.class.getName() + ".action_back";
     private Employee employee;
 
     @Override
@@ -73,21 +71,10 @@ public class DetailsFragment extends BaseFragment<DetailsViewModel, FragmentDeta
         binder.executePendingBindings();
         binder.tvEmployeeBio.setText(Html.fromHtml(employee.getBio()));
         setEmployeeAvatar();
-        setListeners();
-    }
-
-    private void setListeners() {
-        binder.ivBackButton.setOnClickListener(v -> sendActionToActivity(ACTION_BACK));
     }
 
     private void setEmployeeAvatar() {
         Uri avatarUri = Uri.parse(employee.getAvatar());
         binder.draweeEmployeeAvatar.setImageURI(avatarUri);
-    }
-
-    private void sendActionToActivity(String action) {
-        Bundle bundle = new Bundle();
-        bundle.putString(Constants.ACTION, action);
-        fragmentInteractionCallback.onFragmentInteractionCallback(bundle);
     }
 }
